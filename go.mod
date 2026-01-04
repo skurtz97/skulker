@@ -1,4 +1,4 @@
-module fedora-cleaner
+module skulker
 
 go 1.25.5
 
