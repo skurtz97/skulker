@@ -1,5 +1,5 @@
 
-## Baed on the name of a program I encounrered in z/OS UNIX, with some changes of course.
+## Baed on the name of a program I encounrered in z/OS UNIX, and an attempt to recreate it for sentimental reasons.
 
 On the IBM older architectues operating system for Unix (and many of the older original variants)
 You really did need to have a cron job to run Skulker every once in a whike. You could change the settings to not touch tuff (like in RAM based /tmp storage where often running applicaionb files were stored"
