@@ -1,7 +1,7 @@
 
 ## Baed on the name of a program I encounrered in z/OS UNIX, and an attempt to recreate it for sentimental reasons.
 
-On the IBM older architectues operating system for Unix (and many of the older original variants)
+On the IBM older architectues operating system for Unix (and many of the older original variants of programs, although new app development for the platform is strong and modernizaton IS happening at a rapid pace. Thhe customers know it is priority to continue their buisnesses,
 You really did need to have a cron job to run Skulker every once in a whike. You could change the settings to not touch tuff (like in RAM based /tmp storage where often running applicaionb files were stored"
 
  Mostyly kt ks a dupplicate of the logic with a friendlier TUI. Does things like clena duplicates, It:
