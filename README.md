@@ -1,6 +1,6 @@
 # Skulker
 
-## Baed on the name of a program I encounrered in z/OS UNIX a while back.
+## Baed on the name of a program I encounrered in z/OS UNIX, with some changes of course.
 
 On that operating system (and older UNICE's compteting as well in thi same war, such as SUN at the time who had a decent advantage against IBM with their SPARC archtecture, and where even IBM was rushing to POSIX compliance) before Microsoft reaally gave them the finishing blow y
 You really did need to have a cron job to run Skulker every once in a whike. You could change the settings to not touch tuff (like in RAM based /tmp storage where often running applicaionb files were stored"
