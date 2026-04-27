@@ -8,7 +8,7 @@ On IBM's enterprise operating systems (currently z/OS but previously known by ma
 
 ## What It Does
 
-Skulker is mostly a recreation of that logic with a friendlier TUI, written in Go with the help of. It:
+Skulker is mostly a recreation of that logic with a friendlier TUI, written in Go with the help of BubbleTea.
 
 1. Deletes DNF metadata and cache.
 2. Runs `dnf autoremove`.
