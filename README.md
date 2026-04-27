@@ -4,11 +4,11 @@ Based on the name of a program I encountered in z/OS UNIX, and an attempt to rec
 
 ## Background
 
-On IBM's older-architecture operating systems for UNIX — and in many of the older original variants of programs — you really did need a cron job to run Skulker every once in a while. (New application development for the platform is strong and modernization is happening at a rapid pace; customers know it is a priority.) You could change the settings to leave certain things alone, like files in a RAM-based `/tmp` storage where often-running application files were kept.
+On IBM's enterprise operating systems (currently IBM Z but previously known by many names such as OS/360, OS/370, MVS, etc.) that run currently on the s390x instruction set — and in many of the older original variants of programs — you really did need a cron job / JCL job to run Skulker (or something much like it) every once in a while. Clean-up of certain things was not built-in to the operating system and it was expected that the systems programmers (and applications developers if their programs left anything laying around in strange places) would program their own cleanup scripts, because every site was wildly different in how hey setup their operating systems (the existance of exits for example are something that remind of a little bit of eBPF in Linux). It would be a fair analogy to say that every mainframe using organization had their own "distro" in modern parlance.
 
 ## What It Does
 
-Skulker is mostly a recreation of that logic with a friendlier TUI. It:
+Skulker is mostly a recreation of that logic with a friendlier TUI, written in Go with the help of . It:
 
 1. Deletes files not touched in a configurable period of time
 2. Cleans up stale `/tmp` files
