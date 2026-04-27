@@ -1,6 +1,6 @@
 # Skulker
 
-Based on the name of a program I encountered in z/OS UNIX, and an attempt to recreate it for sentimental reasons.
+Based on the name of a program I encountered in z/OS UNIX, and an attempt to recreate it for sentimental reasons. Currently, only intended for use on Fedora or other RedHat derived linux distros.
 
 ## Background
 
@@ -8,14 +8,19 @@ On IBM's enterprise operating systems (currently z/OS but previously known by ma
 
 ## What It Does
 
-Skulker is mostly a recreation of that logic with a friendlier TUI, written in Go with the help of . It:
+Skulker is mostly a recreation of that logic with a friendlier TUI, written in Go with the help of. It:
 
-1. Deletes files not touched in a configurable period of time
-2. Cleans up stale `/tmp` files
-3. Removes duplicates
-4. And more
+1. Deletes DNF metadata and cache.
+2. Runs `dnf autoremove`.
+3. Removes unused flatpak runtimes.
+5. Cleans up the systemd journal.
+6. Removes old kernels.
+7. Purges the user cache.
+
+And more as I have more time to work on it and find more areas to safely cleanup. Its also a good excuse to play around with [BubbleTea](https://github.com/charmbracelet/bubbletea), a TUI framework that I think looks marvelous.
+
+<img width="802" height="403" alt="image" src="https://github.com/user-attachments/assets/a1d1cf79-8366-443b-a21d-6933cc046655" />
 
 ## Motivation
 
-In other words, you used to have to program your computer to do things like clean up after itself. Now it does it for you — but it always did; it just required a system programmer to go write a cron job (or JCL job or possibly REXX, if you were in the IBM world). There is something nostalgic about building one for yourself in a language you like (Go).
-
+In other words, you used to have to program your computer to do things like clean up after itself and you'd have a particular group of people that would be responsible for system stability and cleanup like that (not too terribly unlike a modern SRE). Fedora and RHEL currently clean up after themselves just fine for ordinary use and so this isn't a "big deal" or anything, just something optional you can do. Cleanups like this program provide are also good for debugging in certain instances.
