@@ -17,7 +17,7 @@ Skulker is mostly a recreation of that logic with a friendlier TUI, written in G
 6. Removes old kernels.
 7. Purges the user cache.
 
-And more as I have more time to work on it and find more areas to safely cleanup. Its also a good excuse to play around with [BubbleTea](https://github.com/charmbracelet/bubbletea), a TUI framework that I think looks marvelous.
+And more as I have more time to work on it and find more areas to safely cleanup. It's also a good excuse to play around with [BubbleTea](https://github.com/charmbracelet/bubbletea), a TUI framework that I think looks marvelous.
 
 <img width="741" height="279" alt="image" src="https://github.com/user-attachments/assets/7b7d3802-5a92-4497-850e-2b15cd6b5ad3" />
 <br/>
