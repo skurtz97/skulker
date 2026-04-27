@@ -19,7 +19,10 @@ Skulker is mostly a recreation of that logic with a friendlier TUI, written in G
 
 And more as I have more time to work on it and find more areas to safely cleanup. Its also a good excuse to play around with [BubbleTea](https://github.com/charmbracelet/bubbletea), a TUI framework that I think looks marvelous.
 
-<img width="802" height="403" alt="image" src="https://github.com/user-attachments/assets/a1d1cf79-8366-443b-a21d-6933cc046655" />
+<img width="741" height="279" alt="image" src="https://github.com/user-attachments/assets/7b7d3802-5a92-4497-850e-2b15cd6b5ad3" />
+
+<img width="364" height="325" alt="image" src="https://github.com/user-attachments/assets/ac76ccc3-838d-4da6-9ee5-113b661890e1" />
+
 
 ## Motivation
 
