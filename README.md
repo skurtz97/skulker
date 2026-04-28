@@ -32,4 +32,8 @@ In other words, you used to have to program your computer to do things like clea
 
 ```bash
 sudo dnf install go
-go install https://github.com/skurtz97/skulker.git
+# Force Git to use SSH for authentication
+git config --global url."git@github.com:".insteadOf "https://github.com/"
+#
+go install github.com/skurtz97/skulker@latest
+```
