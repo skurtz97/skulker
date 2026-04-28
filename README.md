@@ -30,7 +30,7 @@ In other words, you used to have to program your computer to do things like clea
 
 ```bash
 sudo dnf install go
-# Force Git to use SSH for authentication
+# Force Git to use SSH for authentication if you have not already done so for your Go installation
 git config --global url."git@github.com:".insteadOf "https://github.com/"
 #
 go install github.com/skurtz97/skulker@latest

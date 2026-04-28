@@ -17,6 +17,16 @@ BINARY_PATH=/usr/local/bin/$(BINARY_NAME)
 # Project directory
 PROJECT_NAME=skulker
 
+# Releasing
+VERSION ?= v0.1.0
+release:
+	@echo "Creating release $(VERSION)..."
+	git tag $(VERSION)
+	git push origin @(VERSION)
+	gh release create $(VERSION) --title "$(VERSION)" --generate-notes
+	@echo "Release $(VERSION) created successfully"
+
+
 # Build: Compile the Go project
 build:
 	$(GOBUILD) -o $(BINARY_NAME) main.go
