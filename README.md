@@ -1,6 +1,7 @@
 # Skulker
 
-Based on the name of a program I encountered in z/OS UNIX, and an attempt to re-create it for sentimental reasons. Currently, only intended for use on Fedora or other RedHat derived linux distros.
+Based on the name of a program I encountered in z/OS UNIX, and an attempt to re-create it for sentimental reasons.
+Currently, I package for Fedora by providing an rpm, as well 
 
 ## Background
 
@@ -28,10 +29,6 @@ In other words, you used to have to program your computer to do things like clea
 
 ## How to Install
 
-```bash
-sudo dnf install go
-# Force Git to use SSH for authentication if you have not already done so for your Go installation
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-#
-go install github.com/skurtz97/skulker@latest
-```
+Download one of the provided binaries, or if you are on Fedora or another
+RPM based distro, you can install the RPM package with `sudo dnf install <path to .rpm file>`.
+
