@@ -31,4 +31,3 @@ In other words, you used to have to program your computer to do things like clea
 
 Download one of the provided binaries, or if you are on Fedora or another
 RPM based distro, you can install the RPM package with `sudo dnf install <path to .rpm file>`.
-

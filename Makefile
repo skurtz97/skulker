@@ -17,8 +17,48 @@ BINARY_PATH=/usr/local/bin/$(BINARY_NAME)
 # Project directory
 PROJECT_NAME=skulker
 
-# Releasing
+# --- Release & Packaging Variables ---
 VERSION ?= v0.1.0
+# Strip the 'v' for the RPM package versioning (e.g., v1.0.0 -> 1.0.0)
+VERSION_CLEAN = $(patsubst v%,%,$(VERSION))
+RPM_DIR = $(PWD)/build/rpm
+RELEASE_DIR = $(PWD)/build/release
+
+# Build raw binaries for common architectures
+build-release: clean
+	@echo "Building raw binaries for $(VERSION)..."
+	mkdir -p $(RELEASE_DIR)
+	GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(RELEASE_DIR)/$(BINARY_NAME)-linux-amd64 main.go
+	GOOS=linux GOARCH=arm64 $(GOBUILD) -o $(RELEASE_DIR)/$(BINARY_NAME)-linux-arm64 main.go
+	@echo "Raw binaries built in $(RELEASE_DIR)/"
+
+# Build the RPM package locally
+rpm: clean
+	@echo "Building RPM for version $(VERSION_CLEAN)..."
+	mkdir -p $(RPM_DIR)/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+	# Create source tarball from current git HEAD
+	git archive --format=tar.gz --prefix=$(PROJECT_NAME)-$(VERSION_CLEAN)/ \
+		-o $(RPM_DIR)/SOURCES/$(PROJECT_NAME)-$(VERSION_CLEAN).tar.gz HEAD
+	# Build RPM using isolated workspace
+	rpmbuild -ba \
+		--define "_topdir $(RPM_DIR)" \
+		--define "pkg_version $(VERSION_CLEAN)" \
+		packaging/skulker.spec
+	@echo "RPM built successfully in $(RPM_DIR)/RPMS/"
+
+# The Grand Release Target: Tag, Push, Build Artifacts, and Release
+release: build-release rpm
+	@echo "Creating release $(VERSION)..."
+	git tag $(VERSION)
+	git push origin $(VERSION)
+	gh release create $(VERSION) \
+		$(RELEASE_DIR)/$(BINARY_NAME)-linux-amd64 \
+		$(RELEASE_DIR)/$(BINARY_NAME)-linux-arm64 \
+		$$(find $(RPM_DIR)/RPMS -name "*.rpm") \
+		--title "$(VERSION)" \
+		--generate-notes
+	@echo "Release $(VERSION) created and all artifacts uploaded successfully."
+	
 release:
 	@echo "Creating release $(VERSION)..."
 	git tag $(VERSION)
