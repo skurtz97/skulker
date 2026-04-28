@@ -5,24 +5,22 @@ Based on the name of a program I encountered in z/OS UNIX, and an attempt to re-
 ## Background
 
 On IBM's enterprise operating systems (currently z/OS but previously known by many names such as OS/360, OS/370, MVS, etc. going well back to before Unix was around and popular) that run currently on the s390x instruction set — and in many of the older original variants of programs — you really did need a cron job / JCL job to run Skulker (or something much like it) every once in a while. Clean-up of certain things was not built-in to the operating system and it was expected that the systems programmers (and applications developers if their programs left anything laying around in strange places) would program their own cleanup scripts, because every site was wildly different in how hey setup their operating systems (the existance of exits for example are something that remind of a little bit of eBPF in Linux). It would be a fair analogy to say that every mainframe using organization had their own "distro" in modern parlance.
-g
-## What It Doesg
+
+## What It Does
 
 Skulker is mostly a re-creation of that logic with a friendlier TUI, written in Go with the help of BubbleTea.
 
 1. Deletes DNF metadata and cache.
 2. Runs `dnf autoremove`.
 3. Removes unused flatpak runtimes.
-5. Cleans up the systemd journal.
-6. Removes old kernels.
-7. Purges the user cache.
+4. Cleans up the systemd journal.
+5. Removes old kernels.
+6. Purges the user cache.
 
 And more as I have more time to work on it and find more areas to safely cleanup. It's also a good excuse to play around with [BubbleTea](https://github.com/charmbracelet/bubbletea), a TUI framework that I think looks marvelous.
 
-<img width="741" height="279" alt="image" src="https://github.com/user-attachments/assets/7b7d3802-5a92-4497-850e-2b15cd6b5ad3" />
-<br/>
-<img width="364" height="325" alt="image" src="https://github.com/user-attachments/assets/ac76ccc3-838d-4da6-9ee5-113b661890e1" />
-
+![image](media/initial-view.png)
+![image](media/running-view.png)
 
 ## Motivation
 

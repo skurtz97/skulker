@@ -1,4 +1,4 @@
-module skulker
+module github.com/skurtz97/skulker
 
 go 1.25.5
 
