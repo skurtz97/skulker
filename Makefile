@@ -58,14 +58,6 @@ release: build-release rpm
 		--title "$(VERSION)" \
 		--generate-notes
 	@echo "Release $(VERSION) created and all artifacts uploaded successfully."
-	
-release:
-	@echo "Creating release $(VERSION)..."
-	git tag $(VERSION)
-	git push origin @(VERSION)
-	gh release create $(VERSION) --title "$(VERSION)" --generate-notes
-	@echo "Release $(VERSION) created successfully"
-
 
 # Build: Compile the Go project
 build:
