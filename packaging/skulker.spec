@@ -26,13 +26,3 @@ install -p -m 755 %{name} %{buildroot}/%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
-EOF
-
-# 2. Add, commit, and push the newly populated file
-git add packaging/skulker.spec
-git commit -m "build: populate empty rpm spec file"
-git push origin main
-
-# 3. Clean the bad artifacts and run the release
-rm -rf build/
-make release VERSION=v0.1.0
