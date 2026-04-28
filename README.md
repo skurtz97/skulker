@@ -1,7 +1,7 @@
 # Skulker
 
 Based on the name of a program I encountered in z/OS UNIX, and an attempt to re-create it for sentimental reasons.
-Currently, I package for Fedora by providing an rpm, as well 
+Currently, I package for Fedora by providing an rpm, as well.
 
 ## Background
 
